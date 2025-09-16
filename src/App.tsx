@@ -36,6 +36,7 @@ const App = () => {
           <PokemonDisplay
             pokemon={pokemon}
             isLoading={isLoading}
+            gameState={gameState}
           />
           <PokemonForm
             handlePokemonNameSubmit={handlePokemonNameSubmit}

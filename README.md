@@ -33,6 +33,35 @@ Este proyecto es ideal para familiarizarse con algunos de los hooks más importa
 - **Vite**: Herramienta de desarrollo frontend moderna y ultrarrápida.
 - **Bootstrap**: Framework de CSS para el diseño de la interfaz.
 
+## Librerías y Dependencias
+
+Este proyecto utiliza las siguientes librerías y dependencias:
+
+### Dependencias Principales
+
+| Librería          | Descripción                               |
+| ----------------- | ----------------------------------------- |
+| `react`           | Biblioteca para construir interfaces de usuario. |
+| `react-dom`       | Proporciona métodos específicos del DOM para React. |
+| `bootstrap`       | Framework de CSS para estilos rápidos y responsivos. |
+| `bootstrap-icons` | Iconos SVG para usar con Bootstrap.       |
+| `react-confetti`  | Muestra una animación de confeti.         |
+| `react-use`       | Colección de React Hooks útiles.          |
+
+### Dependencias de Desarrollo
+
+| Librería                    | Descripción                                                                 |
+| --------------------------- | --------------------------------------------------------------------------- |
+| `@vitejs/plugin-react`      | Plugin de Vite para habilitar el soporte de React.                          |
+| `typescript`                | Superset de JavaScript que añade tipado estático.                           |
+| `eslint`                    | Herramienta para identificar y reportar patrones en el código JavaScript/TS. |
+| `@typescript-eslint/parser` | Parser que permite a ESLint analizar código TypeScript.                     |
+| `eslint-plugin-react-hooks` | Plugin de ESLint para hacer cumplir las reglas de los Hooks de React.       |
+| `eslint-plugin-react-refresh` | Plugin de ESLint para `react-refresh` con Vite.                             |
+| `@types/react`              | Definiciones de tipos de TypeScript para React.                             |
+| `@types/react-dom`          | Definiciones de tipos de TypeScript para `react-dom`.                       |
+| `vite`                      | Herramienta de frontend para un desarrollo web más rápido y ágil.            |
+
 ## Cómo Empezar
 
 Sigue estos pasos para ejecutar el proyecto en tu máquina local.
