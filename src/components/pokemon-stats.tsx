@@ -8,38 +8,30 @@ const PokemonStats = ({ wins, losses, winRate }: PokemonStatsProps) => {
   const totalGames = wins + losses;
 
   return (
-    <div className="card mt-4">
-      <div className="card-header">
-        <h2 className="text-center">Estadísticas del Juego</h2>
+    <div className="mt-8 text-white p-4 bg-blue-600 rounded-lg shadow-lg">
+      <h2 className="font-pokemon text-3xl text-yellow-400 stroke-blue-800 tracking-widest text-center mb-4">Estadísticas del Juego</h2>
+      <div className="flex justify-around text-center">
+        <div>
+          <h4 className="font-bold text-lg">Victorias</h4>
+          <p className="text-3xl font-bold text-green-400">{wins}</p>
+        </div>
+        <div>
+          <h4 className="font-bold text-lg">Derrotas</h4>
+          <p className="text-3xl font-bold text-red-400">{losses}</p>
+        </div>
       </div>
-      <div className="card-body">
-        <div className="d-flex justify-content-around text-center">
-          <div>
-            <h4>Victorias</h4>
-            <p className="fs-3 text-success">{wins}</p>
-          </div>
-          <div>
-            <h4>Derrotas</h4>
-            <p className="fs-3 text-danger">{losses}</p>
-          </div>
-        </div>
-        <div className="mt-3 text-center">
-          <h4>Total de Juegos</h4>
-          <p className="fs-3">{totalGames}</p>
-        </div>
-        <div className="mt-3">
-          <h4 className="text-center">Efectividad</h4>
-          <div className="progress" style={{ height: '25px' }}>
-            <div
-              className="progress-bar bg-info"
-              role="progressbar"
-              style={{ width: `${winRate}%` }}
-              aria-valuenow={winRate}
-              aria-valuemin={0}
-              aria-valuemax={100}
-            >
-              {winRate}%
-            </div>
+      <div className="mt-4 text-center">
+        <h4 className="font-bold text-lg">Total de Juegos</h4>
+        <p className="text-3xl font-bold">{totalGames}</p>
+      </div>
+      <div className="mt-4">
+        <h4 className="font-bold text-lg text-center">Efectividad</h4>
+        <div className="w-full bg-gray-200 rounded-full h-6">
+          <div
+            className="bg-yellow-400 h-6 rounded-full text-center text-blue-600 font-bold"
+            style={{ width: `${winRate}%` }}
+          >
+            {winRate}%
           </div>
         </div>
       </div>

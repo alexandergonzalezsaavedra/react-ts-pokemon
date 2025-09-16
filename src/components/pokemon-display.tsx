@@ -1,6 +1,7 @@
 import type { Pokemon } from '../types/pokemon.interface';
 import { GameState } from '../hooks/use-game-manager';
 import Spiner from './spiner';
+
 interface PokemonDisplayProps {
   pokemon: Pokemon | null;
   isLoading: boolean;
@@ -17,29 +18,26 @@ const PokemonDisplay = ({
   const image = pokemon?.image;
   const name = pokemon?.name;
 
-  console.log(name);
-
   return (
-    <div className='card'>
-      <div className='card-header'>
-        <h1 className='text-center'>
-          {showAnswer ? name?.toUpperCase() : '¿Quién es ese Pokémon?'}
-        </h1>
-      </div>
-      <div className='card-body'>
+    <div className='text-center mb-8'>
+      <h1 className='font-pokemon text-5xl text-yellow-400 stroke-blue-600 tracking-widest mb-4'>
+        {showAnswer ? name?.toUpperCase() : '¿Quién es ese Pokémon?'}
+      </h1>
+      <div className='relative h-48'>
         {isLoading ? (
           <Spiner />
         ) : (
-          <img
-            className='img-fluid mx-auto d-block'
-            src={image}
-            alt=''
-            style={{
-              maxHeight: '200px',
-              filter: showAnswer ? 'none' : 'brightness(0)',
-              transition: 'filter 0.3s ease',
-            }}
-          />
+          <>
+            <img
+              className={`mx-auto h-full transition-all duration-500 ease-in-out ${
+                showAnswer ? 'opacity-100' : ''
+              }`}
+              src={image}
+              style={{
+                filter: showAnswer ? 'none' : 'brightness(0)',
+              }}
+            />
+          </>
         )}
       </div>
     </div>

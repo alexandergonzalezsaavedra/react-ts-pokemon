@@ -28,10 +28,10 @@ export const useGameManager = () => {
 
   useEffect(() => {
     if (gameState === GameState.Won) {
-      setWins(prevWins => prevWins + 1);
+      setWins((prevWins) => prevWins + 1);
     }
     if (gameState === GameState.Lost) {
-      setLosses(prevLosses => prevLosses + 1);
+      setLosses((prevLosses) => prevLosses + 1);
     }
   }, [gameState]);
 
@@ -56,6 +56,7 @@ export const useGameManager = () => {
     try {
       const randomPokemon = await pokemonService.getRandomPokemonId();
       setPokemon(randomPokemon);
+      console.log(randomPokemon?.name);
     } catch (error) {
       setError(
         error instanceof Error ? error.message : 'No se pudo obtener el Pokémon'

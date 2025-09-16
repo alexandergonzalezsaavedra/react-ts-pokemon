@@ -5,31 +5,24 @@ interface Props {
   gameState: GameState;
 }
 const PokemonResult = ({ loadNewPokemon, gameState }: Props) => {
-  console.log('ESTE ES EL ESTADO EN EL COMPONENTE PokemonResult: ' + gameState);
-
   if (gameState === GameState.Playing) {
-    console.log('esta jugando');
     return null;
   }
 
+  const isWinner = gameState === GameState.Won;
+
   return (
     <div
-      className={`alert text-center ${
-        gameState === GameState.Won ? 'alert-success' : 'alert-danger'
+      className={`text-center p-4 rounded-lg shadow-lg animate-fade-in ${
+        isWinner ? 'bg-green-500' : 'bg-red-500'
       }`}
     >
-      {gameState === GameState.Won ? (
-        <h2>
-          ¡Correcto! <i className='bi bi-arrow-through-heart-fill'></i>
-        </h2>
-      ) : (
-        <h2>
-          Incorrecto <i className='bi bi-bug-fill'></i>
-        </h2>
-      )}
+      <h2 className='text-2xl font-bold text-white mb-4'>
+        {isWinner ? '¡Correcto!' : 'Incorrecto'}
+      </h2>
       <button
         onClick={loadNewPokemon}
-        className='btn btn-dark'
+        className='px-6 py-2 font-bold text-white bg-blue-600 border-2 border-yellow-400 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500'
       >
         Volver a jugar
       </button>
