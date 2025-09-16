@@ -2,6 +2,7 @@ import ReactConfetti from 'react-confetti';
 import PokemonDisplay from './components/pokemon-display';
 import PokemonForm from './components/pokemon-form';
 import PokemonResult from './components/pokemon-result';
+import PokemonStats from './components/pokemon-stats';
 import { useGameManager } from './hooks/use-game-manager';
 import { useWindowSize } from 'react-use';
 import { GameState } from './hooks/use-game-manager';
@@ -14,6 +15,9 @@ const App = () => {
     isLoading,
     handlePokemonNameSubmit,
     gameState,
+    wins,
+    losses,
+    winRate,
   } = useGameManager();
   const { width, height } = useWindowSize();
 
@@ -46,6 +50,8 @@ const App = () => {
             loadNewPokemon={loadNewPokemon}
             gameState={gameState}
           />
+          {/* Sección de estadísticas */}
+          <PokemonStats wins={wins} losses={losses} winRate={winRate} />
         </div>
       </div>
     </div>
